@@ -8,22 +8,22 @@
 <style>
   body {
     margin: 0;
-    background-color: #1f1a1a;
-    color: #f0e8de;
+    background-color: #faf8f3;
+    color: #4a4a4a;
     font-family: 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.7;
   }
   header {
-    background-color: #2f2b28;
-    padding: 2rem 1rem;
+    background-color: #f1e9df;
+    padding: 2.5rem 1rem 1.2rem;
     text-align: center;
-    border-bottom: 3px solid #d3625b;
+    border-bottom: 2px solid #c3b299;
   }
   header h1 {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #d3625b;
+    color: #7b6f57;
     letter-spacing: 3px;
     margin: 0 0 0.3rem;
     font-style: italic;
@@ -31,57 +31,53 @@
   nav a {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #d4bfb3;
+    color: #957f6e;
     margin: 0 1.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   nav a:hover {
-    color: #f28b82;
+    color: #b89e82;
   }
   .hero {
     max-width: 900px;
-    margin: 3rem auto 4rem;
-    background-color: #332e2a;
+    margin: 3rem auto 4rem auto;
     padding: 3rem 3rem 3.5rem;
+    background-color: #f7f3ea;
     border-radius: 20px;
-    box-shadow: 0 0 16px 4px #d7636155;
+    box-shadow: 0 0 20px #d9d0bb88;
     text-align: center;
     font-style: italic;
-    color: #f8eada;
+    color: #6b5b3a;
   }
   .hero h2 {
-    font-family: 'Times New Roman', serif;
     font-weight: 700;
     font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #e66a66;
+    margin-bottom: 0.6rem;
   }
   .hero p.centered {
-    font-size: 1.5rem;
-    color: #f0d4cf;
+    font-size: 1.37rem;
+    color: #8a7d61;
     margin: 0 auto 2rem;
-    max-width: 650px;
+    max-width: 680px;
   }
   .button {
-    background-color: #d3625b;
-    color: #f0e6dd;
+    background-color: #b3a78f;
+    color: #fffaf3;
     font-family: 'Times New Roman', serif;
-    font-weight: bold;
+    font-weight: 700;
     border: none;
     padding: 1.2rem 3rem;
     border-radius: 36px;
     font-size: 1.3rem;
-    text-shadow: 0 0 5px #661313;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(182 164 134 / 0.4);
   }
   .button:hover {
-    background-color: #f4a29a;
-    color: #442020;
-    box-shadow: 0 0 20px #f78f86;
+    background-color: #9c8f73;
   }
   main {
     max-width: 900px;
@@ -89,93 +85,94 @@
     padding: 0 2rem;
   }
   section {
-    background-color: #443f3a;
+    background-color: #f1e9df;
     padding: 2.5rem 3rem;
     margin-bottom: 3rem;
     border-radius: 15px;
-    box-shadow: 0 0 20px #a56e67cc;
-    color: #ecdcd7;
+    box-shadow: 0 0 24px rgb(202 188 162 / 0.4);
+    color: #645a3b;
   }
   section h3 {
-    font-family: 'Times New Roman', serif;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin-top: 0;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #e79b96;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #9f956f;
     padding-bottom: 0.4rem;
     color: #e87a73;
   }
   p, li {
-    font-size: 1.17rem;
+    font-size: 1.15rem;
     line-height: 1.8;
+    text-align: justify;
   }
   ul {
-    padding-left: 1.5rem;
+    margin-left: 2rem;
   }
   li {
     margin-bottom: 1rem;
   }
   strong {
-    color: #f7b5ae;
+    color: #a29066;
     font-weight: 700;
   }
   blockquote {
     font-style: italic;
-    background-color: #7c6362cc;
-    border-left: 6px solid #d88e89;
+    background-color: #d5cdb6cc;
+    border-left: 6px solid #b19f70;
     padding: 1rem 2rem;
-    margin: 1.75rem 0;
-    color: #f7d6d3;
+    margin: 1.8rem 0;
+    color: #6c6239;
     font-size: 1.25rem;
+    letter-spacing: 0.03em;
   }
   .timings-table {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     margin: 1rem auto 0 auto;
     border-collapse: collapse;
-    background-color: #dba8a0;
-    border-radius: 10px;
-    box-shadow: 0 0 18px #bb6f6a;
-    color: #5d2a27;
+    background-color: #dbd3b7;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(173 161 128 / 0.5);
+    color: #5a5234;
   }
   .timings-table th, .timings-table td {
     padding: 0.9rem 1rem;
     text-align: center;
   }
   .timings-table th {
-    background-color: #faada2;
+    background-color: #b3a678;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
   .timings-table td {
-    border-bottom: 1px solid #9e5f59;
+    border-bottom: 1px solid #ada16d;
     font-size: 1.1rem;
   }
   .timings-table tr:last-child td {
     border-bottom: none;
   }
   footer {
-    background-color: #302922;
-    color: #f8ebe7;
+    background-color: #e3ddc6;
+    color: #6a6140;
     text-align: center;
     padding: 1.5rem 0;
     font-style: italic;
     font-size: 1rem;
     letter-spacing: 0.7px;
-    box-shadow: inset 0 2px 10px #b49e96;
+    box-shadow: inset 0 2px 6px rgb(196 183 151 / 0.5);
   }
   a {
-    color: #d57771;
+    color: #9a8e68;
   }
   a:hover {
-    color: #f7b5ae;
+    color: #706744;
   }
   @media (max-width: 700px) {
     nav a {
       display: block;
       margin: 0.7rem 0;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
     .hero, main, section {
       padding: 1.5rem;
@@ -201,9 +198,7 @@
 
 <div class="hero">
   <h2>Heal, Grow, and Transform with Prabhleen Arora</h2>
-  <p class="centered">
-    Expert Counselling for Individuals, Couples, and LGBTQIA+ Communities
-  </p>
+  <p class="centered">Expert Counselling for Individuals, Couples, and LGBTQIA+ Communities</p>
   <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button">Book Your Session Now</a>
 </div>
 
@@ -214,6 +209,7 @@
       Her practice serves individuals, couples, and community members across healthcare, education, and corporate life. She specializes in stress, anxiety, trauma, relationship, and sexuality issues, and LGBTQIA+ affirmative therapy.<br/>
       She is deeply committed to holistic well-being, blending evidence-based therapeutic methods with genuine empathy. She offers a non-judgmental environment for healing, helping clients explore their authentic selves with resilience and courage. Her sessions build insight, emotional strength, and lasting change tailored to each journey.</p>
   </section>
+
   <section id="services">
     <h3>Our Counselling Services</h3>
     <ul>
@@ -222,6 +218,7 @@
       <li><strong>LGBTQIA+ Affirmative Therapy:</strong> Supportive counselling for LGBTQIA+ individuals and relationships, addressing identity, stigma, mental health, and love with care.</li>
     </ul>
   </section>
+
   <section id="booking">
     <h3>Book a Session</h3>
     <p>Secure your counselling appointment easily through Calendly. Choose your preferred slot (30-minute session):</p>
@@ -231,7 +228,7 @@
       <li>Couple session: 1300 INR or 15 USD per 30 minutes</li>
     </ul>
     <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button">Book via Calendly</a>
-    <h4 style="color:#db877d; margin: 2rem 0 1rem;">Available Timings</h4>
+    <h4 style="color:#b39869; margin: 2rem 0 1rem;">Available Timings</h4>
     <table class="timings-table">
       <thead>
         <tr><th>Day</th><th>Time</th></tr>
@@ -247,11 +244,13 @@
       </tbody>
     </table>
   </section>
+
   <section id="quotes">
     <h3>Words to Reflect On</h3>
     <blockquote>“Therapy only works when we have a genuine desire to know ourselves as we are, not as we would like to be.”</blockquote>
     <blockquote>“We don't move on—we just move forward with it.”</blockquote>
   </section>
+
   <section>
     <h3>Why Choose Us?</h3>
     <ul>
@@ -260,17 +259,20 @@
       <li><strong>Take the First Step, Transform Your Tomorrow:</strong> Make the courageous choice to invest in your mental well-being today.</li>
     </ul>
   </section>
+
   <section id="testimonials">
     <h3>Testimonials</h3>
     <blockquote>“Prabhleen’s guidance transformed my life. Her insights and gentle approach helped me face long-held fears. Truly a lifesaver.” — A. Sharma</blockquote>
     <blockquote>“We booked as a couple, and the sessions brought us closer. Her understanding of diverse relationships is remarkable.” — Raj & Neha</blockquote>
     <blockquote>“As an LGBTQIA+ individual, finding a therapist who ‘gets it’ was tough—until I met Prabhleen. She’s a beacon of hope and support.” — S. Kumar</blockquote>
   </section>
+
   <section id="contact">
     <h3>Contact</h3>
     <p>Email: <a href="mailto:psycheintwo@gmail.com">psycheintwo@gmail.com</a></p>
   </section>
 </main>
+
 <footer>
   <p>© 2025 The Counselling Guru | Privacy Policy</p>
 </footer>
