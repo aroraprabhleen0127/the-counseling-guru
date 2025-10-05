@@ -3,84 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <title>The Counseling Guru | Prabhleen Arora</title>
-  <meta name="description" content="Heal, grow, and transform with Prabhleen Arora, Psychologist. Expert counseling services for individuals, couples, and LGBTQIA+ communities.">
+  <meta name="description" content="Heal, grow, and transform with Prabhleen Arora, Psychologist. Expert counseling for individuals, couples, LGBTQIA+.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Lato:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #E5E5E5;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #222;
+      background: linear-gradient(135deg, #231313 0%, #3e1b1b 100%);
+      font-family: 'Lato', Arial, sans-serif;
+      color: #DED9D7;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     header {
-      background: #5A9BD4;
-      color: #fff;
-      padding: 1.5rem;
+      background: rgba(30, 10, 10, 0.96);
+      color: #BF202A;
+      padding: 2rem 1rem;
       text-align: center;
+      border-bottom: 5px solid #BF202A;
+      box-shadow: 0 2px 8px #180909ee;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      margin: 0 0 0.25rem 0;
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 2px #000;
+    }
+    nav {
+      margin-top: 0.5rem;
     }
     nav a {
-      color: #fff;
+      color: #DED9D7;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      margin: 0 1.5rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #BF202A;
     }
     .hero {
-      background: #B9AEDC;
-      margin: 2rem auto 0;
-      padding: 2rem 1rem;
-      max-width: 700px;
-      border-radius: 10px;
+      background: rgba(30, 10, 10, 0.85);
+      margin: 2.5rem auto 0;
+      padding: 2rem 1rem 2.5rem 1rem;
+      max-width: 800px;
+      border-radius: 18px;
       text-align: center;
+      box-shadow: 0 4px 32px #11070877;
+      border: 2px solid #BF202A88;
+    }
+    .hero h2 {
+      color: #BF202A;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      margin-bottom: 0.2rem;
+      text-shadow: 1px 2px 4px #170808;
+    }
+    .hero p {
+      font-size: 1.18rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
     }
     .button {
-      background: #5A9BD4;
-      color: #fff;
+      background: linear-gradient(90deg, #BF202A, #9b1c23 80%);
+      color: #f6ece2;
       text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 5px;
-      font-weight: bold;
+      padding: 1rem 2.2rem;
+      border-radius: 24px;
+      border: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.17rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 16px #000c;
       display: inline-block;
       margin-top: 1rem;
-      box-shadow: 0 2px 6px #bbb;
+      cursor: pointer;
+      transition: background 0.4s, color 0.3s;
+    }
+    .button:hover {
+      background: #f6ece2;
+      color: #BF202A;
+      border: 2px solid #BF202A;
     }
     section {
-      background: #fff;
-      margin: 2rem auto;
-      max-width: 700px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px #ddd;
-      padding: 2rem;
+      background: rgba(35, 15, 15, 0.98);
+      margin: 2rem auto 0.5rem auto;
+      max-width: 750px;
+      border-radius: 14px;
+      box-shadow: 0 1px 14px #090303aa;
+      padding: 2rem 1.5rem 1.2rem 1.5rem;
+      border-left: 5px solid #BF202A44;
+      border-right: 2px solid #49202275;
     }
     h2, h3 {
-      color: #5A9BD4;
+      color: #BF202A;
+      font-family: 'Playfair Display', serif;
       margin-top: 0;
+      text-shadow: 1px 2px 2px #18090988;
     }
     ul {
-      padding-left: 1.2rem;
-      margin: 1rem 0;
+      padding-left: 1.5rem;
+      margin: 1.4rem 0 1.3rem 0;
+    }
+    li {
+      margin-bottom: 0.85rem;
+      font-size: 1.07rem;
+    }
+    .services-list li strong {
+      color: #f1c5bc;
+      font-weight: bold;
     }
     blockquote {
-      color: #444;
+      color: #e7c6b5;
       font-style: italic;
-      border-left: 4px solid #B9AEDC;
-      padding-left: 1rem;
-      margin: 1rem 0;
-      background: #f7f6fa;
+      border-left: 5px solid #BF202A;
+      padding-left: 1.3rem;
+      margin: 1.5rem .5rem;
+      background: #2e111177;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px #4c202050;
+      font-size: 1.04rem;
     }
-    footer {
-      background: #5A9BD4;
-      color: #fff;
+    .timings-table {
+      margin: 1rem auto 0 auto;
+      width: 90%;
+      max-width: 360px;
+      border-collapse: collapse;
+      background: #231313bb;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px #15101099;
+    }
+    .timings-table th, .timings-table td {
+      padding: 0.7rem 0.4rem;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
     }
-    @media (max-width:720px) {
-      section, .hero {
-        max-width: 95vw;
-        padding: 1rem;
-      }
+    .timings-table th {
+      background: #BF202A;
+      color: #fff;
+      font-size: 1.09rem;
+      letter-spacing: 1px;
+    }
+    .timings-table td {
+      color: #ededed;
+      border-bottom: 1px solid #421616aa;
+      font-size: 1.04rem;
+    }
+    .timings-table tr:last-child td { border-bottom: 0; }
+    footer {
+      background: rgba(12, 4, 5, 0.98);
+      color: #BF202A;
+      text-align: center;
+      padding: 1.2rem 1rem .8rem 1rem;
+      margin-top: 1.6rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-family: 'Lato', sans-serif;
+      border-top: 2px solid #BF202A44;
+      box-shadow: 0 -2px 12px #241010a4;
+    }
+    @media (max-width:900px) {
+      .hero, section, .timings-table { max-width: 97vw; }
+    }
+    @media (max-width:700px) {
+      h1 {font-size: 2rem;}
+      .hero h2 {font-size: 1.28rem;}
+      nav {font-size: 0.8rem;}
+      .hero, section {padding: 1.1rem;}
     }
   </style>
 </head>
@@ -99,21 +193,43 @@
   <div class="hero">
     <h2>Heal, Grow, and Transform with Prabhleen Arora</h2>
     <p>Expert Counseling for Individuals, Couples, and LGBTQIA+ Communities</p>
-    <a class="button" href="https://calendly.com/yourcalendlylink" target="_blank">Book Your Session Now</a>
+    <a class="button" href="https://calendly.com/aroraprabhleen789/30min" target="_blank">Book Your Session Now</a>
   </div>
 
   <section id="about">
     <h3>About Prabhleen Arora</h3>
-    <p>Master in Clinical Psychology, with 5+ years’ experience across healthcare, education, and corporate. Dedicated to compassionate counseling for every unique journey.</p>
+    <p><b>Prabhleen Arora</b> is a licensed psychologist with a Master in Clinical Psychology and over 5 years of experience supporting personal transformation.<br>
+    Her practice serves a wide variety of clients—individuals, couples, and community members—across healthcare, education, and corporate life. She specializes in stress, anxiety, trauma, relationship and sexuality issues, and LGBTQIA+ affirmative therapy.<br>
+    Prabhleen is deeply committed to holistic well-being, blending evidence-based therapeutic methods with genuine empathy. She offers a non-judgmental environment for healing, helping every client explore their authentic self with resilience and courage. Her sessions build insight, emotional strength, and lasting change tailored to each journey.</p>
   </section>
 
   <section id="services">
     <h3>Our Counseling Services</h3>
-    <ul>
-      <li>Individual Counseling</li>
-      <li>Couples Therapy</li>
-      <li>LGBTQIA+ Support</li>
+    <ul class="services-list">
+      <li><strong>Individual Counseling:</strong> Personalized support to overcome anxiety, depression, trauma, self-esteem challenges, and tough life transitions—empowering healthy growth and emotional stability.</li>
+      <li><strong>Couples Therapy:</strong> Relationship-focused sessions that help partners rebuild trust, resolve conflicts, enhance communication, and nurture intimacy—for all couples, from newly together to long-term marriages.</li>
+      <li><strong>LGBTQIA+ Affirmative Therapy:</strong> Safe and supportive counseling for LGBTQIA+ individuals and relationships, addressing identity, coming out, social stigma, mental health, and love with deep understanding and care.</li>
     </ul>
+  </section>
+
+  <section id="booking">
+    <h3>Book a Session</h3>
+    <p>Secure your counseling appointment easily through Calendly. Choose your preferred slot with a 30-minute session link:</p>
+    <a class="button" href="https://calendly.com/aroraprabhleen789/30min" target="_blank">Book via Calendly</a>
+    <h4 style="color:#f1c5bc;margin:2rem 0 1rem 0;">Available Timings</h4>
+    <table class="timings-table">
+      <tr>
+        <th>Day</th>
+        <th>Time</th>
+      </tr>
+      <tr><td>Monday</td>    <td>11:00am - 7:00pm</td></tr>
+      <tr><td>Tuesday</td>   <td>5:00pm - 9:00pm</td></tr>
+      <tr><td>Wednesday</td> <td>5:00pm - 9:00pm</td></tr>
+      <tr><td>Thursday</td>  <td>5:00pm - 9:00pm</td></tr>
+      <tr><td>Friday</td>    <td>5:00pm - 9:00pm</td></tr>
+      <tr><td>Saturday</td>  <td>5:00pm - 9:00pm</td></tr>
+      <tr><td>Sunday</td>    <td>5:00pm - 9:00pm</td></tr>
+    </table>
   </section>
 
   <section>
@@ -134,7 +250,7 @@
 
   <section id="contact">
     <h3>Contact</h3>
-    <p>Email: <a href="mailto:aroraprabhleen789@gmail.com">aroraprabhleen789@gmail.com</a></p>
+    <p>Email: <a href="mailto:aroraprabhleen789@gmail.com" style="color:#BF202A;">aroraprabhleen789@gmail.com</a></p>
   </section>
 
   <footer>
