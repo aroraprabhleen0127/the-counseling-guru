@@ -6,25 +6,19 @@
 <meta name="description" content="Professional counselling with a clean white and navy blue theme. Support for individuals, couples & LGBTQIA+."/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-  /* Body with soft background texture */
+  /* Body with soft background color */
   body {
     margin: 0;
     font-family: 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.7;
     color: #0a3548;
-    /* Add a soothing background texture or gradient */
     background: #f5f8fc;
-    /* Optional: subtle texture background image (replace URL with your preferred image) */
-    /* background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
   }
 
-  /* Header background with soothing wallpaper pattern/image */
+  /* Header with soothing background image */
   header {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); /* Replace with your chosen background */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
     padding: 2.5rem 1rem 1.2rem;
@@ -38,7 +32,7 @@
     margin: 0 0 0.3rem;
   }
 
-  /* Navigation background overlay for contrast if needed */
+  /* Navigation styles */
   nav {
     display: flex;
     justify-content: center;
@@ -62,47 +56,45 @@
     text-decoration: underline;
   }
 
-  /* Hero section with background image */
+  /* Hero section with background image and overlay */
   .hero {
     max-width: 900px;
     margin: 3rem auto 4rem auto;
     padding: 3rem 2rem 3.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(48, 81, 127, 0.3);
-    text-align: center;
-    color: #0a3548;
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); /* Soothing background for hero */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(48, 81, 127, 0.3);
+    color: #0a3548;
     position: relative;
   }
-  /* Overlay for hero to enhance text readability if needed (semi-transparent) */
   .hero::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    inset: 0;
     background: rgba(255,255,255,0.6);
     border-radius: 20px;
     z-index: 0;
   }
   .hero h2 {
-    position: relative;
     font-weight: 700;
     font-size: 3.2rem;
     margin-bottom: 0.7rem;
-    z-index: 1;
     animation: floatUpDown 4s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
   }
   .hero p.centered {
-    position: relative;
     font-size: 1.4rem;
     max-width: 700px;
     margin: 0 auto 2rem;
     font-style: italic;
+    position: relative;
     z-index: 1;
   }
 
-  /* Buttons with attention animation */
+  /* Button styles */
   .button {
     background-color: #0a3548;
     color: white;
@@ -117,6 +109,16 @@
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     animation: pulseIdle 3s ease-in-out infinite;
   }
+  .button:hover,
+  .button:focus {
+    background-color: #30517f;
+    box-shadow: 0 5px 15px rgba(48, 81, 127, 0.5);
+    transform: scale(1.08);
+    outline: none;
+    animation: none;
+  }
+
+  /* Animations */
   @keyframes pulseIdle {
     0%, 100% {
       box-shadow: 0 0 10px rgba(48, 81, 127, 0.6);
@@ -135,22 +137,25 @@
       transform: translateY(-10px);
     }
   }
-  .button:hover,
-  .button:focus {
-    background-color: #30517f;
-    box-shadow: 0 5px 15px rgba(48, 81, 127, 0.5);
-    transform: scale(1.08);
-    outline: none;
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  /* Main content sections with background images for each */
+  /* Main content */
   main {
     max-width: 900px;
     margin: 0 auto 4rem;
     padding: 0 2rem;
   }
   section {
-    background-color: rgba(255,255,255,0.9); /* Slightly transparent white for overlay effect */
+    background-color: rgba(255,255,255,0.9);
     padding: 2.5rem 3rem;
     margin-bottom: 3rem;
     border-radius: 15px;
@@ -166,16 +171,6 @@
     opacity: 1;
     transform: translateY(0);
     animation-name: fadeSlideUp;
-  }
-  @keyframes fadeSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   section h3 {
     font-weight: 700;
@@ -197,8 +192,11 @@
     margin-bottom: 1.2rem;
     opacity: 0;
     transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-name: fadeSlideUp;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
   }
-  /* Staggered fade-in delays for list items, testimonials, etc. */
   #services ul li:nth-child(1),
   #why-choose ul li:nth-child(1),
   #testimonials blockquote:nth-child(1) {
@@ -214,14 +212,15 @@
   #testimonials blockquote:nth-child(3) {
     animation-delay: 0.9s;
   }
-  /* Animate list items, blockquotes on reveal */
   #services ul li,
   #why-choose ul li,
   #testimonials blockquote {
     animation: fadeSlideUp 0.6s forwards;
   }
-
-  /* Blockquotes hover zoom */
+  strong {
+    color: #30517f;
+    font-weight: 700;
+  }
   blockquote {
     font-style: italic;
     background-color: #d9e9fbcc;
@@ -240,7 +239,7 @@
     outline: none;
   }
 
-  /* Timings table styling */
+  /* Timings table */
   .timing-card {
     background:#e8f0fb;
     border-radius:14px;
@@ -343,4 +342,119 @@
   </nav>
 </header>
 
-<div class="hero" role="banner" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.
+<div class="hero" role="banner">
+  <h2>Heal, Grow, and Transform with Prabhleen Arora</h2>
+  <p class="centered" aria-label="Description">Expert Counselling for Individuals, Couples, and LGBTQIA+ Communities</p>
+  <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" role="button" aria-label="Book your session now">Book your Session Now</a>
+</div>
+
+<main>
+  <section id="about" aria-labelledby="about-title">
+    <h3 id="about-title">About Prabhleen Arora</h3>
+    <p>Prabhleen Arora has a Master in Clinical Psychology and over 5 years of experience supporting personal transformation.<br/>
+      Her practice serves individuals, couples, and community members across healthcare, education, and corporate life. She specializes in stress, anxiety, trauma, relationship, and sexuality issues, and LGBTQIA+ affirmative therapy.<br/>
+      She is deeply committed to holistic well-being, blending evidence-based therapeutic methods with genuine empathy. She offers a non-judgmental environment for healing, helping clients explore their authentic selves with resilience and courage. Her sessions build insight, emotional strength, and lasting change tailored to each journey.</p>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <h3 id="services-title">Our Counselling Services</h3>
+    <ul>
+      <li> <strong>Individual Counselling:</strong> Personalized support for anxiety, depression, trauma, self-esteem challenges, and life transitions—empowering growth and emotional stability.</li>
+      <li> <strong>Couples Therapy:</strong> Sessions focusing on trust, conflict resolution, communication, and intimacy for all couples, from new to long-term partnerships.</li>
+      <li> <strong>LGBTQIA+ Affirmative Therapy:</strong> Supportive counselling for LGBTQIA+ individuals and relationships, addressing identity, stigma, mental health, and love with care.</li>
+    </ul>
+  </section>
+
+  <section id="booking" aria-labelledby="booking-title">
+    <h3 id="booking-title">Book a Session</h3>
+    <p>Secure a counseling appointment with just a few clicks.</p>
+    <p><strong>Session Charges:</strong></p>
+    <ul>
+      <li>Individual session: 1000 INR or 10 USD per 30 minutes</li>
+      <li>Couple session: 1300 INR or 15 USD per 30 minutes</li>
+    </ul>
+    <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" style="margin-bottom: 1rem;" role="button" aria-label="Book your slot now above timings">Book Your Slot</a>
+    <div class="timing-card" role="region" aria-labelledby="timing-header" aria-describedby="timing-desc">
+      <h4 id="timing-header"><span aria-hidden="true">🗓️</span> Therapy Hours</h4>
+      <p id="timing-desc">Pick a convenient time—sessions fill up quickly!</p>
+      <table class="timings-table" role="table" aria-describedby="timing-desc">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sunday</td><td>11:00am - 7:00pm</td></tr>
+          <tr><td>Monday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Tuesday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Wednesday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Thursday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Friday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Saturday</td><td>7:30pm - 9:30pm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" role="button" aria-label="Book your slot now below timings">Book Your Slot</a>
+  </section>
+
+  <section id="quotes" aria-labelledby="quotes-title">
+    <h3 id="quotes-title">Words to Reflect On</h3>
+    <blockquote tabindex="0">“Therapy only works when we have a genuine desire to know ourselves as we are, not as we would like to be.”</blockquote>
+    <blockquote tabindex="0">“We don't move on—we just move forward with it.”</blockquote>
+  </section>
+
+  <section id="why-choose" aria-labelledby="why-choose-title">
+    <h3 id="why-choose-title">Why Choose Us?</h3>
+    <ul>
+      <li><strong>Heal and Thrive with Expert Care:</strong> Trust Prabhleen’s clinical expertise to help you conquer anxiety and embrace your true self.</li>
+      <li><strong>Safe Space for Every Story:</strong> Acceptance and tailored therapy for individuals, couples, and LGBTQIA+ clients.</li>
+      <li><strong>Take the First Step, Transform Your Tomorrow:</strong> Make the courageous choice to invest in your mental well-being today.</li>
+    </ul>
+  </section>
+
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <h3 id="testimonials-title">Testimonials</h3>
+    <blockquote tabindex="0">“Prabhleen’s guidance transformed my life. Her insights and gentle approach helped me face long-held fears. Truly a lifesaver.” — A. Sharma</blockquote>
+    <blockquote tabindex="0">“We booked as a couple, and the sessions brought us closer. Her understanding of diverse relationships is remarkable.” — Raj & Neha</blockquote>
+    <blockquote tabindex="0">“As an LGBTQIA+ individual, finding a therapist who ‘gets it’ was tough—until I met Prabhleen. She’s a beacon of hope and support.” — S. Kumar</blockquote>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <h3 id="contact-title">Contact</h3>
+    <p>Email: <a href="mailto:psycheintwo@gmail.com" aria-label="Send email to psycheintwo@gmail.com">psycheintwo@gmail.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 The Counselling Guru | Privacy Policy</p>
+</footer>
+
+<script>
+  // Scroll reveal for sections and list items
+  document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+
+    function revealSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if(boxTop < triggerBottom) {
+          section.classList.add("visible");
+          // Animate list items inside section
+          const listItems = section.querySelectorAll('li, blockquote');
+          listItems.forEach((item, index) => {
+            item.style.animationDelay = (0.3 * (index + 1)) + 's';
+            item.style.opacity = 1;
+            item.style.transform = 'translateY(0)';
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealSections);
+    revealSections(); // Initial reveal on load
+  });
+</script>
+</body>
+</html>
