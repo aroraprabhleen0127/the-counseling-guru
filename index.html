@@ -14,6 +14,7 @@
     font-family: 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.7;
+    scroll-behavior: smooth; /* Smooth scroll for nav */
   }
   header {
     background-color: #cfdbea;
@@ -48,14 +49,33 @@
     background-color: #30517f;
     color: #bbd6ee;
     outline: none;
+    text-decoration: underline;
   }
 
   /* Hero Section */
+  @keyframes backgroundPulse {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
   .hero {
     max-width: 900px;
     margin: 3rem auto 4rem auto;
     padding: 3rem 2rem 3.5rem;
     background: linear-gradient(135deg, #bbd6ee 0%, #aaccee 100%);
+    background-size: 200% 200%;
+    animation: backgroundPulse 8s ease-in-out infinite;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(48, 81, 127, 0.3);
     text-align: center;
@@ -65,6 +85,7 @@
     font-weight: 700;
     font-size: 3.2rem;
     margin-bottom: 0.7rem;
+    animation: floatUpDown 4s ease-in-out infinite;
   }
   .hero p.centered {
     font-size: 1.4rem;
@@ -84,10 +105,26 @@
     display: inline-block;
     font-weight: 700;
     transition: background-color 0.3s ease;
+    animation: pulseIdle 3s ease-in-out infinite;
   }
-  .button:hover,
-  .button:focus {
+  /* Button Idle Pulsate */
+  @keyframes pulseIdle {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(48, 81, 127, 0.6);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 18px rgba(48, 81, 127, 1);
+      transform: scale(1.03);
+    }
+  }
+  /* Button Hover Animation */
+  .button:hover, .button:focus {
     background-color: #30517f;
+    box-shadow: 0 5px 15px rgba(48, 81, 127, 0.5);
+    transform: scale(1.08);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    animation: none; /* stop idle pulse on hover */
     outline: none;
   }
 
@@ -104,6 +141,29 @@
     border-radius: 15px;
     box-shadow: 0 6px 24px rgba(120, 140, 170, 0.15);
     color: #0a3548;
+
+    /* Initial animation state */
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation-name: fadeSlideUp;
+  }
+  /* Animation Keyframes */
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   section h3 {
     font-weight: 700;
@@ -123,6 +183,28 @@
   }
   li {
     margin-bottom: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-name: fadeSlideUp;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+  /* Staggered fade-in delays for list items */
+  #services ul li:nth-child(1),
+  #why-choose ul li:nth-child(1),
+  #testimonials blockquote:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  #services ul li:nth-child(2),
+  #why-choose ul li:nth-child(2),
+  #testimonials blockquote:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  #services ul li:nth-child(3),
+  #why-choose ul li:nth-child(3),
+  #testimonials blockquote:nth-child(3) {
+    animation-delay: 0.9s;
   }
   strong {
     color: #30517f;
@@ -137,6 +219,13 @@
     color: #0a3548;
     font-size: 1.3rem;
     letter-spacing: 0.03em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  blockquote:hover,
+  blockquote:focus {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(48, 81, 127, 0.25);
+    outline: none;
   }
 
   /* Timings Table Styled as a Card */
@@ -177,9 +266,11 @@
   }
   .timings-table tbody tr:nth-child(odd) {
     background-color: #2d517a;
+    transition: background-color 0.3s ease;
   }
   .timings-table tbody tr:nth-child(even) {
     background-color: #3f6599;
+    transition: background-color 0.3s ease;
   }
   .timings-table th {
     font-weight: 700;
@@ -187,6 +278,11 @@
   }
   .timings-table td {
     font-size: 1.1rem;
+  }
+  /* Table row hover */
+  .timings-table tbody tr:hover {
+    background-color: #1f3a62 !important;
+    cursor: pointer;
   }
 
   /* Footer */
@@ -264,9 +360,9 @@
   <section id="services" aria-labelledby="services-title">
     <h3 id="services-title">Our Counselling Services</h3>
     <ul>
-      <li><strong>Individual Counselling:</strong> Personalized support for anxiety, depression, trauma, self-esteem challenges, and life transitions—empowering growth and emotional stability.</li>
-      <li><strong>Couples Therapy:</strong> Sessions focusing on trust, conflict resolution, communication, and intimacy for all couples, from new to long-term partnerships.</li>
-      <li><strong>LGBTQIA+ Affirmative Therapy:</strong> Supportive counselling for LGBTQIA+ individuals and relationships, addressing identity, stigma, mental health, and love with care.</li>
+      <li> <strong>Individual Counselling:</strong> Personalized support for anxiety, depression, trauma, self-esteem challenges, and life transitions—empowering growth and emotional stability.</li>
+      <li> <strong>Couples Therapy:</strong> Sessions focusing on trust, conflict resolution, communication, and intimacy for all couples, from new to long-term partnerships.</li>
+      <li> <strong>LGBTQIA+ Affirmative Therapy:</strong> Supportive counselling for LGBTQIA+ individuals and relationships, addressing identity, stigma, mental health, and love with care.</li>
     </ul>
   </section>
 
@@ -305,11 +401,11 @@
 
   <section id="quotes" aria-labelledby="quotes-title">
     <h3 id="quotes-title">Words to Reflect On</h3>
-    <blockquote>“Therapy only works when we have a genuine desire to know ourselves as we are, not as we would like to be.”</blockquote>
-    <blockquote>“We don't move on—we just move forward with it.”</blockquote>
+    <blockquote tabindex="0">“Therapy only works when we have a genuine desire to know ourselves as we are, not as we would like to be.”</blockquote>
+    <blockquote tabindex="0">“We don't move on—we just move forward with it.”</blockquote>
   </section>
 
-  <section aria-labelledby="why-choose-title">
+  <section id="why-choose" aria-labelledby="why-choose-title">
     <h3 id="why-choose-title">Why Choose Us?</h3>
     <ul>
       <li><strong>Heal and Thrive with Expert Care:</strong> Trust Prabhleen’s clinical expertise to help you conquer anxiety and embrace your true self.</li>
@@ -320,9 +416,9 @@
 
   <section id="testimonials" aria-labelledby="testimonials-title">
     <h3 id="testimonials-title">Testimonials</h3>
-    <blockquote>“Prabhleen’s guidance transformed my life. Her insights and gentle approach helped me face long-held fears. Truly a lifesaver.” — A. Sharma</blockquote>
-    <blockquote>“We booked as a couple, and the sessions brought us closer. Her understanding of diverse relationships is remarkable.” — Raj & Neha</blockquote>
-    <blockquote>“As an LGBTQIA+ individual, finding a therapist who ‘gets it’ was tough—until I met Prabhleen. She’s a beacon of hope and support.” — S. Kumar</blockquote>
+    <blockquote tabindex="0">“Prabhleen’s guidance transformed my life. Her insights and gentle approach helped me face long-held fears. Truly a lifesaver.” — A. Sharma</blockquote>
+    <blockquote tabindex="0">“We booked as a couple, and the sessions brought us closer. Her understanding of diverse relationships is remarkable.” — Raj & Neha</blockquote>
+    <blockquote tabindex="0">“As an LGBTQIA+ individual, finding a therapist who ‘gets it’ was tough—until I met Prabhleen. She’s a beacon of hope and support.” — S. Kumar</blockquote>
   </section>
 
   <section id="contact" aria-labelledby="contact-title">
@@ -334,5 +430,32 @@
 <footer>
   <p>© 2025 The Counselling Guru | Privacy Policy</p>
 </footer>
+
+<script>
+  // Scroll reveal for sections
+  document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+
+    function revealSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if(boxTop < triggerBottom) {
+          section.classList.add("visible");
+          // Also animate list items inside the section
+          const listItems = section.querySelectorAll('li, blockquote');
+          listItems.forEach((item, index) => {
+            item.style.animationDelay = (0.3 * (index + 1)) + 's';
+            item.style.opacity = 1;
+            item.style.transform = 'translateY(0)';
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealSections);
+    revealSections(); // Reveal on initial load
+  });
+</script>
 </body>
 </html>
