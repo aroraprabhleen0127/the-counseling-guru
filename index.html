@@ -6,9 +6,10 @@
 <meta name="description" content="Professional counselling with a clean white and navy blue theme. Support for individuals, couples & LGBTQIA+."/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+  /* Base styles */
   body {
     margin: 0;
-    background-color: white;
+    background-color: #f5f8fc;  /* Soft light background for calm */
     color: #0a3548;
     font-family: 'Times New Roman', serif;
     font-size: 18px;
@@ -18,7 +19,7 @@
     background-color: #cfdbea;
     padding: 2.5rem 1rem 1.2rem;
     text-align: center;
-    border-bottom: 2px solid #0a3548;
+    border-bottom: 3px solid #0a3548;
   }
   header h1 {
     font-size: 3.5rem;
@@ -27,36 +28,49 @@
     letter-spacing: 3px;
     margin: 0 0 0.3rem;
   }
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
   nav a {
     font-weight: 600;
     font-size: 1.2rem;
     color: #0a3548;
-    margin: 0 1.5rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s ease;
   }
-  nav a:hover {
-    color: #7195bb;
+  nav a:hover,
+  nav a:focus {
+    background-color: #30517f;
+    color: #bbd6ee;
+    outline: none;
   }
+
+  /* Hero Section */
   .hero {
     max-width: 900px;
     margin: 3rem auto 4rem auto;
-    padding: 3rem 3rem 3.5rem;
-    background-color: #bbd6ee;
+    padding: 3rem 2rem 3.5rem;
+    background: linear-gradient(135deg, #bbd6ee 0%, #aaccee 100%);
     border-radius: 20px;
-    box-shadow: 0 0 20px #90a9cd88;
+    box-shadow: 0 8px 20px rgba(48, 81, 127, 0.3);
     text-align: center;
     color: #0a3548;
   }
   .hero h2 {
     font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 0.6rem;
+    font-size: 3.2rem;
+    margin-bottom: 0.7rem;
   }
   .hero p.centered {
-    font-size: 1.37rem;
+    font-size: 1.4rem;
+    max-width: 700px;
     margin: 0 auto 2rem;
-    max-width: 680px;
+    font-style: italic;
   }
   .button {
     background-color: #0a3548;
@@ -64,39 +78,43 @@
     border: none;
     padding: 1.2rem 3rem;
     border-radius: 36px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
     font-weight: 700;
     transition: background-color 0.3s ease;
   }
-  .button:hover {
+  .button:hover,
+  .button:focus {
     background-color: #30517f;
+    outline: none;
   }
+
+  /* Main Content */
   main {
     max-width: 900px;
     margin: 0 auto 4rem;
     padding: 0 2rem;
   }
   section {
-    background-color: #d7e2f0;
+    background-color: white;
     padding: 2.5rem 3rem;
     margin-bottom: 3rem;
     border-radius: 15px;
-    box-shadow: 0 0 24px #94a9d788;
+    box-shadow: 0 6px 24px rgba(120, 140, 170, 0.15);
     color: #0a3548;
   }
   section h3 {
     font-weight: 700;
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin-top: 0;
     margin-bottom: 1.2rem;
     border-bottom: 3px solid #0a3548;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.5rem;
   }
   p, li {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     text-align: justify;
   }
@@ -104,7 +122,7 @@
     margin-left: 2rem;
   }
   li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
   strong {
     color: #30517f;
@@ -117,35 +135,61 @@
     padding: 1rem 2rem;
     margin: 1.8rem 0;
     color: #0a3548;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     letter-spacing: 0.03em;
+  }
+
+  /* Timings Table Styled as a Card */
+  .timing-card {
+    background:#e8f0fb;
+    border-radius:14px;
+    box-shadow:0 2px 15px rgba(176,196,222,0.4);
+    margin:1.5rem 0;
+    padding:1.5rem;
+  }
+  .timing-card h4 {
+    color:#0a3548;
+    margin-bottom:0.5rem;
+    font-size:1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .timing-card p {
+    color:#4d6895;
+    margin-bottom: 1rem;
+    font-size: 1rem;
   }
   .timings-table {
     width: 100%;
     max-width: 400px;
-    margin: 1rem auto 0 auto;
     border-collapse: collapse;
-    background-color: #30517f;
     border-radius: 12px;
-    box-shadow: 0 0 18px #182e505a;
-    color: white;
+    overflow: hidden;
+  }
+  .timings-table thead {
+    background-color: #12406e;
   }
   .timings-table th, .timings-table td {
     padding: 0.9rem 1rem;
     text-align: center;
+    color: white;
+  }
+  .timings-table tbody tr:nth-child(odd) {
+    background-color: #2d517a;
+  }
+  .timings-table tbody tr:nth-child(even) {
+    background-color: #3f6599;
   }
   .timings-table th {
-    background-color: #12406e;
     font-weight: 700;
     font-size: 1.15rem;
   }
   .timings-table td {
-    border-bottom: 1px solid #1f4273;
     font-size: 1.1rem;
   }
-  .timings-table tr:last-child td {
-    border-bottom: none;
-  }
+
+  /* Footer */
   footer {
     background-color: #30517f;
     color: white;
@@ -159,21 +203,33 @@
   a {
     color: #0a3548;
     font-weight: 700;
+    transition: color 0.3s ease;
   }
-  a:hover {
+  a:hover,
+  a:focus {
     color: #bbd6ee;
+    outline: none;
   }
+
+  /* Responsive tweaks */
   @media (max-width: 700px) {
-    nav a {
-      display: block;
-      margin: 0.7rem 0;
-      font-size: 1.2rem;
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 1rem;
     }
     .hero, main, section {
-      padding: 1.5rem;
+      padding: 1.5rem 1.5rem 2rem;
     }
     .timings-table {
       max-width: 100%;
+    }
+    .button {
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1.5rem 0;
+      border-radius: 12px;
     }
   }
 </style>
@@ -181,32 +237,32 @@
 <body>
 <header>
   <h1>The Counselling Guru</h1>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#booking">Book Now</a>
-    <a href="#quotes">Quotes</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="#services" tabindex="0">Services</a>
+    <a href="#about" tabindex="0">About</a>
+    <a href="#booking" tabindex="0">Book Now</a>
+    <a href="#quotes" tabindex="0">Quotes</a>
+    <a href="#testimonials" tabindex="0">Testimonials</a>
+    <a href="#contact" tabindex="0">Contact</a>
   </nav>
 </header>
 
-<div class="hero">
+<div class="hero" role="banner">
   <h2>Heal, Grow, and Transform with Prabhleen Arora</h2>
-  <p class="centered">Expert Counselling for Individuals, Couples, and LGBTQIA+ Communities</p>
-  <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button">Book Your Session Now</a>
+  <p class="centered" aria-label="Description">Expert Counselling for Individuals, Couples, and LGBTQIA+ Communities</p>
+  <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" role="button" aria-label="Book your session now">Book your Session Now</a>
 </div>
 
 <main>
-  <section id="about">
-    <h3>About Prabhleen Arora</h3>
+  <section id="about" aria-labelledby="about-title">
+    <h3 id="about-title">About Prabhleen Arora</h3>
     <p>Prabhleen Arora has a Master in Clinical Psychology and over 5 years of experience supporting personal transformation.<br/>
       Her practice serves individuals, couples, and community members across healthcare, education, and corporate life. She specializes in stress, anxiety, trauma, relationship, and sexuality issues, and LGBTQIA+ affirmative therapy.<br/>
       She is deeply committed to holistic well-being, blending evidence-based therapeutic methods with genuine empathy. She offers a non-judgmental environment for healing, helping clients explore their authentic selves with resilience and courage. Her sessions build insight, emotional strength, and lasting change tailored to each journey.</p>
   </section>
 
-  <section id="services">
-    <h3>Our Counselling Services</h3>
+  <section id="services" aria-labelledby="services-title">
+    <h3 id="services-title">Our Counselling Services</h3>
     <ul>
       <li><strong>Individual Counselling:</strong> Personalized support for anxiety, depression, trauma, self-esteem challenges, and life transitions—empowering growth and emotional stability.</li>
       <li><strong>Couples Therapy:</strong> Sessions focusing on trust, conflict resolution, communication, and intimacy for all couples, from new to long-term partnerships.</li>
@@ -214,40 +270,47 @@
     </ul>
   </section>
 
-  <section id="booking">
-    <h3>Book a Session</h3>
-    <p>Secure your counselling appointment easily through Calendly. Choose your preferred slot (30-minute session):</p>
+  <section id="booking" aria-labelledby="booking-title">
+    <h3 id="booking-title">Book a Session</h3>
+    <p>Secure a counseling appointment with just a few clicks.</p>
     <p><strong>Session Charges:</strong></p>
     <ul>
       <li>Individual session: 1000 INR or 10 USD per 30 minutes</li>
       <li>Couple session: 1300 INR or 15 USD per 30 minutes</li>
     </ul>
-    <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button">Book via Calendly</a>
-    <h4 style="color:#0a3548; margin: 2rem 0 1rem;">Available Timings</h4>
-    <table class="timings-table">
-      <thead>
-        <tr><th>Day</th><th>Time</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Sunday</td><td>11:00am - 7:00pm</td></tr>
-        <tr><td>Monday</td><td>7:30pm - 9:30pm</td></tr>
-        <tr><td>Tuesday</td><td>7:30pm - 9:30pm</td></tr>
-        <tr><td>Wednesday</td><td>7:30pm - 9:30pm</td></tr>
-        <tr><td>Thursday</td><td>7:30pm - 9:30pm</td></tr>
-        <tr><td>Friday</td><td>7:30pm - 9:30pm</td></tr>
-        <tr><td>Saturday</td><td>7:30pm - 9:30pm</td></tr>
-      </tbody>
-    </table>
+    <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" style="margin-bottom: 1rem;" role="button" aria-label="Book your slot now above timings">Book Your Slot</a>
+    <div class="timing-card" role="region" aria-labelledby="timing-header" aria-describedby="timing-desc">
+      <h4 id="timing-header"><span aria-hidden="true">🗓️</span> Therapy Hours</h4>
+      <p id="timing-desc">Pick a convenient time—sessions fill up quickly!</p>
+      <table class="timings-table" role="table" aria-describedby="timing-desc">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sunday</td><td>11:00am - 7:00pm</td></tr>
+          <tr><td>Monday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Tuesday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Wednesday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Thursday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Friday</td><td>7:30pm - 9:30pm</td></tr>
+          <tr><td>Saturday</td><td>7:30pm - 9:30pm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="https://calendly.com/psycheintwo/30min" target="_blank" class="button" role="button" aria-label="Book your slot now below timings">Book Your Slot</a>
   </section>
 
-  <section id="quotes">
-    <h3>Words to Reflect On</h3>
+  <section id="quotes" aria-labelledby="quotes-title">
+    <h3 id="quotes-title">Words to Reflect On</h3>
     <blockquote>“Therapy only works when we have a genuine desire to know ourselves as we are, not as we would like to be.”</blockquote>
     <blockquote>“We don't move on—we just move forward with it.”</blockquote>
   </section>
 
-  <section>
-    <h3>Why Choose Us?</h3>
+  <section aria-labelledby="why-choose-title">
+    <h3 id="why-choose-title">Why Choose Us?</h3>
     <ul>
       <li><strong>Heal and Thrive with Expert Care:</strong> Trust Prabhleen’s clinical expertise to help you conquer anxiety and embrace your true self.</li>
       <li><strong>Safe Space for Every Story:</strong> Acceptance and tailored therapy for individuals, couples, and LGBTQIA+ clients.</li>
@@ -255,16 +318,16 @@
     </ul>
   </section>
 
-  <section id="testimonials">
-    <h3>Testimonials</h3>
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <h3 id="testimonials-title">Testimonials</h3>
     <blockquote>“Prabhleen’s guidance transformed my life. Her insights and gentle approach helped me face long-held fears. Truly a lifesaver.” — A. Sharma</blockquote>
     <blockquote>“We booked as a couple, and the sessions brought us closer. Her understanding of diverse relationships is remarkable.” — Raj & Neha</blockquote>
     <blockquote>“As an LGBTQIA+ individual, finding a therapist who ‘gets it’ was tough—until I met Prabhleen. She’s a beacon of hope and support.” — S. Kumar</blockquote>
   </section>
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:psycheintwo@gmail.com">psycheintwo@gmail.com</a></p>
+  <section id="contact" aria-labelledby="contact-title">
+    <h3 id="contact-title">Contact</h3>
+    <p>Email: <a href="mailto:psycheintwo@gmail.com" aria-label="Send email to psycheintwo@gmail.com">psycheintwo@gmail.com</a></p>
   </section>
 </main>
 
